@@ -460,52 +460,62 @@ const Footer = ({ navigate }) => (
 const HomePage = ({ navigate }) => (
   <>
     {/* Hero Section */}
-    <div className="relative bg-gradient-to-br from-slate-800 via-blue-900 to-slate-800 text-white pt-40 pb-32 overflow-hidden min-h-screen flex items-center">
+    <div className="relative bg-gradient-to-br from-slate-800 via-blue-900 to-slate-800 text-white pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden min-h-screen flex items-center">
       <div className="absolute inset-0 z-0 opacity-20 mix-blend-overlay pointer-events-none">
-         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-                <pattern id="hero-pattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-                    <circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.3)" />
-                </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#hero-pattern)" />
-         </svg>
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="hero-pattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.3)" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#hero-pattern)" />
+        </svg>
       </div>
-      
+
       {/* Gradient Blobs */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-600/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"></div>
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-teal-600/10 rounded-full blur-3xl translate-y-1/4 -translate-x-1/4"></div>
       <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-transparent to-slate-900/90 z-0"></div>
-      
-      <Container className="relative z-10 text-center">
-        <motion.div 
+
+      <Container className="relative z-10 text-center px-4 sm:px-6">
+        <motion.div
           initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
           className="inline-flex items-center gap-2 py-2 px-6 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-teal-300 text-xs font-bold uppercase tracking-widest mb-8 shadow-2xl"
         >
           <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
           Innovation Meets Education
         </motion.div>
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-black font-heading mb-8 leading-tight drop-shadow-2xl tracking-tight"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black font-heading mb-6 md:mb-8 leading-tight drop-shadow-2xl tracking-tight"
         >
           Iqra Virtual Solutions <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-blue-300 to-teal-200">
             Powering Your Digital Journey
           </span>
         </motion.h1>
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
-          className="text-lg md:text-2xl text-slate-300 max-w-3xl mx-auto mb-12 leading-relaxed font-light"
+          className="text-base sm:text-lg md:text-2xl text-slate-300 max-w-3xl mx-auto mb-10 md:mb-12 leading-relaxed font-light"
         >
           We provide smart IT, LMS, automation, cloud, and software solutions for businesses, educational institutes, and global clients.
         </motion.p>
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }}
-          className="flex flex-col md:flex-row gap-6 justify-center items-center"
+          className="flex flex-col md:flex-row gap-6 justify-center items-center w-full max-w-xl mx-auto md:max-w-none"
         >
-          <Button variant="accent" onClick={() => navigate('services')} className="min-w-[200px] !text-base shadow-teal-500/25">Explore Services</Button>
-          <Button variant="outline" className="!border-white/30 !text-white hover:!bg-white hover:!text-slate-900 min-w-[200px] !text-base backdrop-blur-sm" onClick={() => navigate('contact')}>
+          <Button
+            variant="accent"
+            onClick={() => navigate('services')}
+            className="min-w-[200px] w-full md:w-auto !text-base shadow-teal-500/25"
+          >
+            Explore Services
+          </Button>
+          <Button
+            variant="outline"
+            className="min-w-[200px] w-full md:w-auto !border-white/30 !text-white hover:!bg-white hover:!text-slate-900 !text-base backdrop-blur-sm"
+            onClick={() => navigate('contact')}
+          >
             <Phone size={18} /> Contact Us
           </Button>
         </motion.div>
@@ -514,13 +524,13 @@ const HomePage = ({ navigate }) => (
 
     {/* Trust Badges */}
     <div className="relative z-20 -mt-16 mx-4 lg:mx-8">
-      <Container className="bg-white/80 backdrop-blur-md border border-white shadow-2xl rounded-3xl p-8 lg:p-12">
-        <motion.div 
+      <Container className="bg-white/80 backdrop-blur-md border border-white shadow-2xl rounded-3xl p-6 sm:p-8 lg:p-12">
+        <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 divide-x-0 md:divide-x divide-slate-100"
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 divide-x-0 md:divide-x divide-slate-100"
         >
           {[
             { label: "Since 2013", sub: "Years of Excellence", icon: CheckCircle },
@@ -528,13 +538,17 @@ const HomePage = ({ navigate }) => (
             { label: "Global Clients", sub: "USA, UAE, UK, KSA", icon: Globe },
             { label: "End-to-End", sub: "IT & LMS Solutions", icon: Server }
           ].map((badge, index) => (
-            <motion.div key={index} variants={fadeInUp} className="flex items-center gap-5 justify-center md:pl-8 first:pl-0">
-              <div className="text-teal-600 bg-teal-50 p-4 rounded-2xl shrink-0 shadow-sm">
-                <badge.icon size={26} />
+            <motion.div
+              key={index}
+              variants={fadeInUp}
+              className="flex items-center gap-4 sm:gap-5 justify-center md:justify-start md:pl-8 first:pl-0 text-center md:text-left"
+            >
+              <div className="text-teal-600 bg-teal-50 p-3 sm:p-4 rounded-2xl shrink-0 shadow-sm">
+                <badge.icon size={24} className="sm:w-[26px] sm:h-[26px]" />
               </div>
               <div>
-                <p className="text-xl font-bold text-slate-900 leading-none mb-1">{badge.label}</p>
-                <p className="text-sm text-slate-500 font-medium uppercase tracking-wide">{badge.sub}</p>
+                <p className="text-lg sm:text-xl font-bold text-slate-900 leading-none mb-1">{badge.label}</p>
+                <p className="text-xs sm:text-sm text-slate-500 font-medium uppercase tracking-wide">{badge.sub}</p>
               </div>
             </motion.div>
           ))}
@@ -544,9 +558,9 @@ const HomePage = ({ navigate }) => (
 
     {/* Core Services Preview */}
     <Section className="bg-slate-50/50">
-      <Container>
+      <Container className="px-4 sm:px-6">
         <Heading>Our Expertise</Heading>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           <Card title="LMS & Online Classroom" icon={BookOpen}>
             Custom Learning Management Systems designed for schools, universities, and global academies.
           </Card>
@@ -566,8 +580,10 @@ const HomePage = ({ navigate }) => (
             Protecting your digital assets with advanced security protocols and 24/7 IT infrastructure support.
           </Card>
         </div>
-        <motion.div variants={fadeInUp} className="flex justify-center mt-20">
-          <Button variant="outline" onClick={() => navigate('services')} className="!px-10 !py-4">View All Services</Button>
+        <motion.div variants={fadeInUp} className="flex justify-center mt-12 md:mt-20">
+          <Button variant="outline" onClick={() => navigate('services')} className="!px-10 !py-4">
+            View All Services
+          </Button>
         </motion.div>
       </Container>
     </Section>
@@ -576,12 +592,17 @@ const HomePage = ({ navigate }) => (
     <Section className="bg-gradient-to-br from-slate-800 via-blue-900 to-slate-800 text-white relative">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.03]"></div>
       <div className="absolute right-0 bottom-0 w-1/2 h-full bg-gradient-to-l from-blue-900/20 to-transparent"></div>
-      
-      <Container className="relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+
+      <Container className="relative z-10 px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="text-center lg:text-left">
-            <Heading className="!text-white text-center lg:text-left" align={window.innerWidth >= 1024 ? 'left' : 'center'}>Why Partner With IVS?</Heading>
-            <motion.div variants={staggerContainer} className="space-y-8 mt-10 text-left inline-block w-full"> 
+            <Heading
+              className="!text-white text-center lg:text-left"
+              align={window.innerWidth >= 1024 ? 'left' : 'center'}
+            >
+              Why Partner With IVS?
+            </Heading>
+            <motion.div variants={staggerContainer} className="space-y-6 sm:space-y-8 mt-8 sm:mt-10 text-left inline-block w-full">
               {[
                 "Over a decade of experience bridging Education and Technology.",
                 "Scalable solutions used by clients in USA, UAE, KSA, and Pakistan.",
@@ -589,19 +610,21 @@ const HomePage = ({ navigate }) => (
                 "Comprehensive support from concept to deployment.",
                 "Expertise in both secular and religious educational tech needs."
               ].map((item, idx) => (
-                <motion.div key={idx} variants={fadeInUp} className="flex items-start gap-5 group">
+                <motion.div key={idx} variants={fadeInUp} className="flex items-start gap-4 sm:gap-5 group">
                   <div className="bg-teal-500/10 border border-teal-500/30 p-2 rounded-full shrink-0 text-teal-400 group-hover:bg-teal-500 group-hover:text-white transition-all duration-300">
                     <CheckCircle size={20} />
                   </div>
-                  <p className="text-slate-200 text-lg leading-relaxed font-light">{item}</p>
+                  <p className="text-slate-200 text-base sm:text-lg leading-relaxed font-light">{item}</p>
                 </motion.div>
               ))}
             </motion.div>
-            <motion.div variants={fadeInUp} className="flex justify-center lg:justify-start mt-16">
-              <Button variant="accent" onClick={() => navigate('about')} className="!px-10">Learn More About Us</Button>
+            <motion.div variants={fadeInUp} className="flex justify-center lg:justify-start mt-12 lg:mt-16">
+              <Button variant="accent" onClick={() => navigate('about')} className="!px-10">
+                Learn More About Us
+              </Button>
             </motion.div>
           </div>
-           
+
           {/* Animated Stats Section */}
           <motion.div variants={scaleIn} className="relative hidden lg:block perspective-1000">
             <div className="bg-gradient-to-br from-red-900 via-red-800 to-slate-900 p-16 rounded-[2.5rem] shadow-2xl shadow-red-900/40 relative z-10 transform hover:rotate-y-2 transition-transform duration-500 border border-white/10">
@@ -611,7 +634,7 @@ const HomePage = ({ navigate }) => (
               <div className="h-px bg-gradient-to-r from-transparent via-red-400/30 to-transparent w-full my-10"></div>
               <AnimatedCounter value={50} label="Global Clients" />
             </div>
-            
+
             {/* Decorative Elements */}
             <div className="absolute -top-8 -right-8 w-full h-full border-2 border-teal-500/30 rounded-[3rem] z-0"></div>
             <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-teal-500/20 rounded-full blur-3xl"></div>
@@ -622,67 +645,67 @@ const HomePage = ({ navigate }) => (
 
     {/* Our Values Section */}
     <Section className="bg-white">
-      <Container>
-        <div className="text-center mb-20">
-          <motion.span 
+      <Container className="px-4 sm:px-6">
+        <div className="text-center mb-12 md:mb-20">
+          <motion.span
             variants={fadeInUp}
             className="text-teal-600 font-bold tracking-widest uppercase text-xs block mb-4 bg-teal-50 inline-block px-4 py-1 rounded-full"
           >
             OUR VALUES
           </motion.span>
           <Heading className="mb-6">Guiding Principles That Define Us</Heading>
-          <motion.p 
+          <motion.p
             variants={fadeInUp}
-            className="text-slate-500 max-w-2xl mx-auto text-lg leading-relaxed font-light"
+            className="text-slate-500 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed font-light"
           >
             Our talented professionals combine technical expertise with creative problem-solving to deliver exceptional results.
           </motion.p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
           {[
-            { 
-              title: "Expertise", 
+            {
+              title: "Expertise",
               desc: "Continuously pushing boundaries to deliver cutting-edge digital solutions that drive real business value.",
               icon: Zap,
               color: "text-amber-500 bg-amber-50"
             },
-            { 
-              title: "Excellence", 
+            {
+              title: "Excellence",
               desc: "Maintaining the highest standards in every project and service we deliver to our clients.",
               icon: Star,
               color: "text-purple-500 bg-purple-50"
             },
-            { 
-              title: "Integrity", 
+            {
+              title: "Integrity",
               desc: "Building trust through transparent communication and ethical business practices in all our endeavors.",
               icon: Shield,
               color: "text-blue-500 bg-blue-50"
             },
-            { 
-              title: "Collaboration", 
+            {
+              title: "Collaboration",
               desc: "Fostering strong partnerships with clients to achieve shared goals and sustainable success.",
               icon: Users,
               color: "text-pink-500 bg-pink-50"
             },
-            { 
-              title: "Technical Depth", 
+            {
+              title: "Technical Depth",
               desc: "Leveraging deep technical knowledge and industry experience to deliver optimal solutions.",
               icon: Code,
               color: "text-teal-500 bg-teal-50"
             }
           ].map((value, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               variants={fadeInUp}
               whileHover={{ y: -10 }}
-              className="bg-slate-50/50 p-12 rounded-3xl hover:bg-white hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col items-center text-center w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] group"
+              className="bg-slate-50/50 p-8 sm:p-10 lg:p-12 rounded-3xl hover:bg-white hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col items-center text-center w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] group"
             >
-              <div className={`w-20 h-20 rounded-3xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform duration-500 ${value.color}`}>
-                <value.icon size={36} strokeWidth={1.5} />
+              <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-3xl flex items-center justify-center mb-6 sm:mb-8 shadow-sm group-hover:scale-110 transition-transform duration-500 ${value.color}`}>
+                <value.icon size={32} className="sm:w-9 sm:h-9" strokeWidth={1.5} />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">{value.title}</h3>
-              <p className="text-slate-500 leading-relaxed">{value.desc}</p>
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3 sm:mb-4">{value.title}</h3>
+              <p className="text-slate-500 leading-relaxed text-sm sm:text-base">{value.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -697,30 +720,34 @@ const HomePage = ({ navigate }) => (
         <div className="absolute bottom-10 right-10 w-64 h-64 bg-blue-300/30 rounded-full blur-3xl"></div>
       </div>
 
-      <Container className="relative z-10">
+      <Container className="relative z-10 px-4 sm:px-6">
         <Heading>Client Success Stories</Heading>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {[
             { text: "IVS transformed our traditional institute into a fully digital campus. Their LMS is intuitive and powerful.", author: "Sheikh Abdullah", role: "Director, Educational Institute (UAE)" },
             { text: "Reliable, secure, and professional. They handled our cloud migration and cybersecurity perfectly.", author: "James Carter", role: "CEO, Tech Startups (USA)" },
             { text: "The best team for educational technology in Pakistan. Dr. Ahmad's vision shines through their work.", author: "Fatima Hayat", role: "Principal, Online School (UK)" }
           ].map((t, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               variants={fadeInUp}
               whileHover={{ y: -10 }}
-              className="bg-white p-10 rounded-3xl shadow-lg shadow-slate-200/50 border border-white flex flex-col h-full relative"
+              className="bg-white p-8 sm:p-10 rounded-3xl shadow-lg shadow-slate-200/50 border border-white flex flex-col h-full relative"
             >
               <div className="absolute top-8 right-8 text-slate-100">
                 <MessageCircle size={60} fill="currentColor" className="opacity-20" />
               </div>
-              <div className="flex gap-1 mb-8">
-                {[1, 2, 3, 4, 5].map(star => <Star key={star} size={20} className="fill-amber-400 text-amber-400" />)}
+              <div className="flex gap-1 mb-6 sm:mb-8">
+                {[1, 2, 3, 4, 5].map(star => (
+                  <Star key={star} size={18} className="sm:w-5 sm:h-5 fill-amber-400 text-amber-400" />
+                ))}
               </div>
-              <p className="italic text-slate-600 mb-10 text-lg leading-relaxed flex-grow font-medium">"{t.text}"</p>
-              <div className="border-t border-slate-100 pt-6">
-                <p className="font-bold text-slate-900 text-xl mb-1">{t.author}</p>
-                <p className="text-sm text-teal-600 uppercase tracking-wider font-bold">{t.role}</p>
+              <p className="italic text-slate-600 mb-8 sm:mb-10 text-base sm:text-lg leading-relaxed flex-grow font-medium">
+                "{t.text}"
+              </p>
+              <div className="border-t border-slate-100 pt-4 sm:pt-6">
+                <p className="font-bold text-slate-900 text-lg sm:text-xl mb-1">{t.author}</p>
+                <p className="text-xs sm:text-sm text-teal-600 uppercase tracking-wider font-bold">{t.role}</p>
               </div>
             </motion.div>
           ))}
@@ -731,13 +758,22 @@ const HomePage = ({ navigate }) => (
     {/* CTA */}
     <Section className="bg-gradient-to-br from-teal-600 to-teal-800 text-white text-center relative">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-      <Container className="relative z-10">
+      <Container className="relative z-10 px-4 sm:px-6">
         <Heading className="!text-white !mb-6">Ready to Start Your Project?</Heading>
-        <motion.p variants={fadeInUp} className="mb-12 text-teal-100 max-w-2xl mx-auto text-xl leading-relaxed font-light">
+        <motion.p
+          variants={fadeInUp}
+          className="mb-10 sm:mb-12 text-teal-100 max-w-2xl mx-auto text-base sm:text-xl leading-relaxed font-light"
+        >
           Whether you need a robust LMS, a custom app, or digital marketing, our team is ready to help you succeed.
         </motion.p>
         <motion.div variants={fadeInUp} className="flex justify-center">
-          <Button variant="white" onClick={() => navigate('contact')} className="!px-12 !py-5 !text-xl text-teal-700 hover:text-teal-800 shadow-2xl shadow-teal-900/20">Book a Call Today</Button>
+          <Button
+            variant="white"
+            onClick={() => navigate('contact')}
+            className="w-full sm:w-auto !px-8 sm:!px-12 !py-4 sm:!py-5 !text-lg sm:!text-xl text-teal-700 hover:text-teal-800 shadow-2xl shadow-teal-900/20"
+          >
+            Book a Call Today
+          </Button>
         </motion.div>
       </Container>
     </Section>
