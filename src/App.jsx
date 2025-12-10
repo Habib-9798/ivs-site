@@ -1333,46 +1333,74 @@ const ServicesPage = ({ navigate }) => (
     </Section>
   </>
 );
-
 const BlogPage = () => {
   const [selectedPost, setSelectedPost] = useState(null);
 
   return (
     <>
-      <div className="bg-gradient-to-b from-slate-800 via-blue-900 to-slate-800 py-40 text-white relative overflow-hidden">
+      <div className="bg-gradient-to-b from-slate-800 via-blue-900 to-slate-800 py-28 md:py-40 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
-        <Container className="relative z-10 text-center">
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="text-5xl md:text-7xl font-black tracking-tight mb-8">Insights & News</motion.h1>
-          <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto font-light">
+        <Container className="relative z-10 text-center px-4 sm:px-6">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight mb-6 md:mb-8"
+          >
+            Insights & News
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-base sm:text-lg md:text-2xl text-slate-300 max-w-3xl mx-auto font-light leading-relaxed"
+          >
             Latest trends in EdTech, Digital Marketing, and Software Development.
           </motion.p>
         </Container>
       </div>
 
       <Section>
-        <Container>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <Container className="px-4 sm:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
             {BLOG_POSTS.map((post) => (
-              <motion.div 
-                key={post.id} 
+              <motion.div
+                key={post.id}
                 variants={fadeInUp}
                 className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col group"
               >
-                <div className="h-64 overflow-hidden relative">
+                <div className="h-48 sm:h-56 md:h-64 overflow-hidden relative">
                   <div className="absolute inset-0 bg-slate-900/10 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <img src={post.image} alt={post.title} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
-                  <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm text-teal-700 text-xs font-bold px-4 py-2 rounded-full uppercase tracking-widest shadow-lg z-20">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute top-4 sm:top-6 left-4 sm:left-6 bg-white/90 backdrop-blur-sm text-teal-700 text-[10px] sm:text-xs font-bold px-3 sm:px-4 py-1.5 sm:py-2 rounded-full uppercase tracking-widest shadow-lg z-20">
                     {post.category}
                   </div>
                 </div>
-                <div className="p-8 flex flex-col flex-grow">
-                  <div className="flex items-center gap-6 text-xs font-bold text-slate-400 uppercase tracking-wider mb-6">
-                     <div className="flex items-center gap-2"><Calendar size={14} /> {post.date}</div>
-                     <div className="flex items-center gap-2"><Clock size={14} /> {post.readTime}</div>
+                <div className="p-6 sm:p-8 flex flex-col flex-grow">
+                  <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-[11px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 sm:mb-6">
+                    <div className="flex items-center gap-2">
+                      <Calendar size={14} /> {post.date}
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Clock size={14} /> {post.readTime}
+                    </div>
                   </div>
-                  <h3 onClick={() => setSelectedPost(post)} className="text-2xl font-bold text-slate-900 mb-4 leading-snug group-hover:text-teal-600 transition-colors cursor-pointer">{post.title}</h3>
-                  <p className="text-slate-500 text-base mb-8 line-clamp-3 flex-grow leading-relaxed">{post.snippet}</p>
-                  <button onClick={() => setSelectedPost(post)} className="text-red-800 font-bold text-sm flex items-center gap-2 hover:gap-4 transition-all mt-auto uppercase tracking-widest">
+                  <h3
+                    onClick={() => setSelectedPost(post)}
+                    className="text-xl sm:text-2xl font-bold text-slate-900 mb-3 sm:mb-4 leading-snug group-hover:text-teal-600 transition-colors cursor-pointer"
+                  >
+                    {post.title}
+                  </h3>
+                  <p className="text-slate-500 text-sm sm:text-base mb-6 sm:mb-8 line-clamp-3 flex-grow leading-relaxed">
+                    {post.snippet}
+                  </p>
+                  <button
+                    onClick={() => setSelectedPost(post)}
+                    className="text-red-800 font-bold text-xs sm:text-sm flex items-center gap-2 hover:gap-4 transition-all mt-auto uppercase tracking-widest"
+                  >
                     Read Article <ArrowRight size={16} />
                   </button>
                 </div>
@@ -1385,44 +1413,60 @@ const BlogPage = () => {
       {/* Blog Post Modal */}
       <AnimatePresence>
         {selectedPost && (
-          <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-             <motion.div 
-               variants={modalVariants}
-               initial="hidden"
-               animate="visible"
-               exit="exit"
-               className="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl shadow-2xl relative"
-             >
-               <button 
-                 onClick={() => setSelectedPost(null)}
-                 className="absolute top-6 right-6 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 transition-colors z-20"
-               >
-                 <X size={24} />
-               </button>
-               <div className="h-80 w-full relative">
-                 <img src={selectedPost.image} alt={selectedPost.title} className="w-full h-full object-cover" />
-                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8 md:p-12">
-                    <div className="flex items-center gap-4 text-white/80 text-sm font-bold mb-2">
-                      <span className="bg-teal-500 text-white px-3 py-1 rounded-full uppercase text-xs tracking-widest">{selectedPost.category}</span>
-                      <span>{selectedPost.date}</span>
-                    </div>
-                    <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">{selectedPost.title}</h2>
-                 </div>
-               </div>
-               <div className="p-8 md:p-12">
-                 <div className="prose prose-lg max-w-none text-slate-600 leading-relaxed whitespace-pre-line">
-                    {selectedPost.content}
-                 </div>
-                 <div className="mt-12 pt-8 border-t border-slate-100 flex justify-between items-center">
-                    <p className="font-bold text-slate-900">Share this article:</p>
-                    <div className="flex gap-4">
-                       <button className="text-slate-400 hover:text-blue-600"><Facebook size={20} /></button>
-                       <button className="text-slate-400 hover:text-blue-500"><Linkedin size={20} /></button>
-                       <button className="text-slate-400 hover:text-sky-500"><Globe size={20} /></button>
-                    </div>
-                 </div>
-               </div>
-             </motion.div>
+          <div className="fixed inset-0 z-[60] flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-sm">
+            <motion.div
+              variants={modalVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl shadow-2xl relative"
+            >
+              <button
+                onClick={() => setSelectedPost(null)}
+                className="absolute top-4 sm:top-6 right-4 sm:right-6 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 transition-colors z-20"
+              >
+                <X size={24} />
+              </button>
+              <div className="h-56 sm:h-72 md:h-80 w-full relative">
+                <img
+                  src={selectedPost.image}
+                  alt={selectedPost.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 sm:p-8 md:p-12">
+                  <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-white/80 text-xs sm:text-sm font-bold mb-2">
+                    <span className="bg-teal-500 text-white px-3 py-1 rounded-full uppercase text-[10px] sm:text-xs tracking-widest">
+                      {selectedPost.category}
+                    </span>
+                    <span>{selectedPost.date}</span>
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
+                    {selectedPost.title}
+                  </h2>
+                </div>
+              </div>
+              <div className="p-6 sm:p-8 md:p-12">
+                <div className="prose prose-sm sm:prose-lg max-w-none text-slate-600 leading-relaxed whitespace-pre-line">
+                  {selectedPost.content}
+                </div>
+                <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-slate-100 flex flex-col sm:flex-row gap-4 sm:gap-0 justify-between items-start sm:items-center">
+                  <p className="font-bold text-slate-900 text-sm sm:text-base">
+                    Share this article:
+                  </p>
+                  <div className="flex gap-4">
+                    <button className="text-slate-400 hover:text-blue-600">
+                      <Facebook size={20} />
+                    </button>
+                    <button className="text-slate-400 hover:text-blue-500">
+                      <Linkedin size={20} />
+                    </button>
+                    <button className="text-slate-400 hover:text-sky-500">
+                      <Globe size={20} />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         )}
       </AnimatePresence>
