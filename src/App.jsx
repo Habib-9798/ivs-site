@@ -886,19 +886,30 @@ const AboutPage = ({ navigate }) => (
 
 const ServicesPage = ({ navigate }) => (
   <>
-    <div className="bg-gradient-to-b from-slate-800 via-blue-900 to-slate-800 py-40 text-white relative overflow-hidden">
+    <div className="bg-gradient-to-b from-slate-800 via-blue-900 to-slate-800 py-24 md:py-40 text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
-      <Container className="relative z-10 text-center">
-        <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="text-5xl md:text-7xl font-black tracking-tight mb-8">Our Services</motion.h1>
-        <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto font-light">
+      <Container className="relative z-10 text-center px-4 sm:px-6">
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight mb-6 sm:mb-8 leading-tight"
+        >
+          Our Services
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="text-base sm:text-lg md:text-2xl text-slate-300 max-w-3xl mx-auto font-light"
+        >
           Complete IT solutions from concept to deployment and long-term support.
         </motion.p>
       </Container>
     </div>
 
     <Section>
-      <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <Container className="px-4 sm:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
           {[
             { 
               title: "LMS Development & Online Classroom Systems",
@@ -940,7 +951,7 @@ const ServicesPage = ({ navigate }) => (
               desc: "Grow your brand visibility and reach the right audience through targeted campaigns.",
               points: ["SEO & Content Strategy", "Social Media Management", "PPC Advertising"]
             },
-             { 
+            { 
               title: "Mobile Application Development",
               desc: "Native and cross-platform mobile apps for iOS and Android.",
               points: ["React Native & Flutter", "User-Centric UI/UX", "App Store Optimization"]
@@ -951,101 +962,107 @@ const ServicesPage = ({ navigate }) => (
               points: ["Digital Transformation Strategy", "Tech Stack Audits", "Cost Optimization"]
             }
           ].map((service, i) => (
-             <motion.div 
-               key={i} 
-               variants={fadeInUp} 
-               className="flex flex-col h-full p-10 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500 group relative overflow-hidden"
-             >
-                <div className="absolute top-0 left-0 w-full h-1 bg-slate-100 group-hover:bg-teal-500 transition-colors duration-500"></div>
-                <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center mb-8 text-slate-700 group-hover:bg-teal-500 group-hover:text-white transition-all duration-300 shadow-sm">
-                   <CheckCircle size={28} strokeWidth={1.5} />
-                </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">{service.title}</h3>
-                <p className="text-slate-600 mb-10 leading-relaxed flex-grow">{service.desc}</p>
-                <ul className="space-y-4 mt-auto">
-                  {service.points.map((point, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm text-slate-600 group-hover:text-slate-800 transition-colors">
-                      <div className="mt-0.5 text-teal-500"><CheckCircle size={18} /></div>
-                      <span className="font-medium">{point}</span>
-                    </li>
-                  ))}
-                </ul>
-             </motion.div>
+            <motion.div 
+              key={i} 
+              variants={fadeInUp} 
+              className="flex flex-col h-full p-6 sm:p-8 md:p-10 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500 group relative overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 w-full h-1 bg-slate-100 group-hover:bg-teal-500 transition-colors duration-500"></div>
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-slate-50 rounded-2xl flex items-center justify-center mb-6 sm:mb-8 text-slate-700 group-hover:bg-teal-500 group-hover:text-white transition-all duration-300 shadow-sm">
+                <CheckCircle size={24} className="sm:w-7 sm:h-7" strokeWidth={1.5} />
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3 sm:mb-4">{service.title}</h3>
+              <p className="text-slate-600 mb-6 sm:mb-10 leading-relaxed flex-grow text-sm sm:text-base">
+                {service.desc}
+              </p>
+              <ul className="space-y-3 sm:space-y-4 mt-auto">
+                {service.points.map((point, idx) => (
+                  <li key={idx} className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-slate-600 group-hover:text-slate-800 transition-colors">
+                    <div className="mt-0.5 text-teal-500">
+                      <CheckCircle size={16} className="sm:w-[18px] sm:h-[18px]" />
+                    </div>
+                    <span className="font-medium">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
           ))}
         </div>
       </Container>
     </Section>
 
     <Section className="bg-white relative overflow-hidden">
-       <Container>
-         <div className="text-center mb-16">
-           <Heading>Our Approach</Heading>
-           <p className="text-slate-500 max-w-2xl mx-auto text-lg font-light">
-             A clear, secure and collaborative process from first call to long-term support.
-           </p>
-         </div>
-         
-         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
-            <div className="hidden md:block absolute top-10 left-0 w-full h-0.5 bg-slate-100 -z-10"></div>
+      <Container className="px-4 sm:px-6">
+        <div className="text-center mb-10 sm:mb-16">
+          <Heading>Our Approach</Heading>
+          <p className="text-slate-500 max-w-2xl mx-auto text-base sm:text-lg font-light">
+            A clear, secure and collaborative process from first call to long-term support.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 relative">
+          <div className="hidden md:block absolute top-10 left-0 w-full h-0.5 bg-slate-100 -z-10"></div>
 
-            {[
-              { 
-                title: "Protect your IP", 
-                text: "We begin with NDAs and confidential handling of your idea so your intellectual property stays fully protected.",
-                icon: Shield,
-                color: "text-blue-600 bg-blue-50"
-              },
-              { 
-                title: "Discover & Define", 
-                text: "Through consultation and project discovery, we understand your goals, users, and challenges, then define a clear project scope and roadmap.",
-                icon: Search,
-                color: "text-amber-500 bg-amber-50"
-              },
-              { 
-                title: "Design & Prototype", 
-                text: "Our team creates intuitive UI/UX designs and interactive prototypes so you can see and refine the experience before development starts.",
-                icon: PenTool,
-                color: "text-purple-500 bg-purple-50"
-              },
-              { 
-                title: "Build & Assure Quality", 
-                text: "Using agile development, we build your solution in increments with continuous QA and testing to ensure performance, security, and reliability.",
-                icon: Code,
-                color: "text-teal-500 bg-teal-50"
-              },
-              { 
-                title: "Launch, Support & Evolve", 
-                text: "We handle deployment, monitoring, and ongoing maintenance, and help you improve the product over time based on real-world feedback.",
-                icon: Rocket,
-                color: "text-red-500 bg-red-50"
-              }
-            ].map((step, i) => (
-              <motion.div 
-                key={i}
-                variants={fadeInUp}
-                className="flex flex-col items-center text-center group"
-              >
-                <div className={`w-20 h-20 rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300 z-10 border-4 border-white ${step.color}`}>
-                  <step.icon size={32} strokeWidth={1.5} />
-                </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-3">{step.title}</h3>
-                <p className="text-sm text-slate-500 leading-relaxed">{step.text}</p>
-              </motion.div>
-            ))}
-         </div>
-       </Container>
+          {[
+            { 
+              title: "Protect your IP", 
+              text: "We begin with NDAs and confidential handling of your idea so your intellectual property stays fully protected.",
+              icon: Shield,
+              color: "text-blue-600 bg-blue-50"
+            },
+            { 
+              title: "Discover & Define", 
+              text: "Through consultation and project discovery, we understand your goals, users, and challenges, then define a clear project scope and roadmap.",
+              icon: Search,
+              color: "text-amber-500 bg-amber-50"
+            },
+            { 
+              title: "Design & Prototype", 
+              text: "Our team creates intuitive UI/UX designs and interactive prototypes so you can see and refine the experience before development starts.",
+              icon: PenTool,
+              color: "text-purple-500 bg-purple-50"
+            },
+            { 
+              title: "Build & Assure Quality", 
+              text: "Using agile development, we build your solution in increments with continuous QA and testing to ensure performance, security, and reliability.",
+              icon: Code,
+              color: "text-teal-500 bg-teal-50"
+            },
+            { 
+              title: "Launch, Support & Evolve", 
+              text: "We handle deployment, monitoring, and ongoing maintenance, and help you improve the product over time based on real-world feedback.",
+              icon: Rocket,
+              color: "text-red-500 bg-red-50"
+            }
+          ].map((step, i) => (
+            <motion.div 
+              key={i}
+              variants={fadeInUp}
+              className="flex flex-col items-center text-center group px-2"
+            >
+              <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center mb-4 sm:mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300 z-10 border-4 border-white ${step.color}`}>
+                <step.icon size={26} className="sm:w-8 sm:h-8" strokeWidth={1.5} />
+              </div>
+              <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-2 sm:mb-3">{step.title}</h3>
+              <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
+                {step.text}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </Container>
     </Section>
 
     {/* Technologies Section */}
     <Section className="bg-white">
-      <Container>
-        <div className="text-center mb-16">
+      <Container className="px-4 sm:px-6">
+        <div className="text-center mb-10 sm:mb-16">
           <Heading>Technologies We Use</Heading>
-          <p className="text-slate-500 max-w-2xl mx-auto text-lg font-light">
+          <p className="text-slate-500 max-w-2xl mx-auto text-base sm:text-lg font-light">
             Cutting-edge tools and frameworks to build robust, scalable solutions.
           </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
           {[
             { 
               name: "React", 
@@ -1159,12 +1176,14 @@ const ServicesPage = ({ navigate }) => (
               variants={fadeInUp}
               whileHover={{ y: -5 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg border border-slate-100 flex flex-col items-center justify-center gap-4 transition-all cursor-default"
+              className="bg-white p-4 sm:p-6 rounded-2xl shadow-sm hover:shadow-lg border border-slate-100 flex flex-col items-center justify-center gap-3 sm:gap-4 transition-all cursor-default"
             >
-              <div className="w-12 h-12 bg-teal-50 rounded-full flex items-center justify-center text-teal-600 shadow-sm">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-teal-50 rounded-full flex items-center justify-center text-teal-600 shadow-sm">
                 {tech.icon}
               </div>
-              <span className="font-bold text-slate-700">{tech.name}</span>
+              <span className="font-bold text-slate-700 text-sm sm:text-base">
+                {tech.name}
+              </span>
             </motion.div>
           ))}
         </div>
@@ -1172,13 +1191,23 @@ const ServicesPage = ({ navigate }) => (
     </Section>
     
     <Section className="bg-slate-50">
-      <Container>
-        <div className="bg-gradient-to-r from-red-900 to-red-800 rounded-[3rem] p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl shadow-red-900/30">
+      <Container className="px-4 sm:px-6">
+        <div className="bg-gradient-to-r from-red-900 to-red-800 rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl shadow-red-900/30">
           <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/shattered-island.png')] opacity-20"></div>
           <div className="relative z-10">
-            <Heading level={2} className="!text-white !mb-8">Unsure which solution fits your needs?</Heading>
-            <p className="text-red-100 text-xl mb-12 max-w-2xl mx-auto font-light">Our consultants are available to audit your current infrastructure and suggest the best path forward.</p>
-            <Button variant="white" onClick={() => navigate('contact')} className="mx-auto !text-red-900 !px-10 !py-5 !text-lg">Schedule a Free Discovery Call</Button>
+            <Heading level={2} className="!text-white !mb-6 sm:!mb-8">
+              Unsure which solution fits your needs?
+            </Heading>
+            <p className="text-sm sm:text-lg text-red-100 mb-8 sm:mb-12 max-w-2xl mx-auto font-light">
+              Our consultants are available to audit your current infrastructure and suggest the best path forward.
+            </p>
+            <Button
+              variant="white"
+              onClick={() => navigate('contact')}
+              className="w-full sm:w-auto mx-auto !text-red-900 !px-8 sm:!px-10 !py-4 sm:!py-5 !text-base sm:!text-lg"
+            >
+              Schedule a Free Discovery Call
+            </Button>
           </div>
         </div>
       </Container>
