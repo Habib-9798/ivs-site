@@ -68,7 +68,7 @@ const AnimatedCounter = ({ value, label }) => {
 
   return (
     <div ref={ref} className="text-center lg:text-left group">
-      <div className="text-5xl md:text-6xl font-extrabold text-white mb-2 flex items-baseline justify-center lg:justify-start tracking-tight group-hover:scale-105 transition-transform duration-300 origin-left">
+      <div className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-2 flex items-baseline justify-center lg:justify-start tracking-tight group-hover:scale-105 transition-transform duration-300 origin-left">
         {displayValue}+
       </div>
       <p className="text-teal-100/80 text-lg font-medium tracking-wide uppercase">{label}</p>
@@ -86,10 +86,10 @@ const WhatsAppWidget = () => (
     transition={{ delay: 1, type: "spring", stiffness: 200, damping: 20 }}
     whileHover={{ scale: 1.1 }}
     whileTap={{ scale: 0.9 }}
-    className="fixed bottom-8 right-8 z-50 bg-gradient-to-br from-green-500 to-green-600 text-white p-4 rounded-full shadow-xl flex items-center justify-center cursor-pointer hover:shadow-green-500/40 hover:shadow-2xl transition-all duration-300 group border-2 border-white/20"
+    className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-50 bg-gradient-to-br from-green-500 to-green-600 text-white p-3 sm:p-4 rounded-full shadow-xl flex items-center justify-center cursor-pointer hover:shadow-green-500/40 hover:shadow-2xl transition-all duration-300 group border-2 border-white/20"
   >
-    <MessageCircle size={28} strokeWidth={2.5} />
-    <span className="absolute right-full mr-4 bg-white text-slate-900 px-4 py-2 rounded-xl text-sm font-bold shadow-lg whitespace-nowrap opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none flex items-center gap-2">
+    <MessageCircle size={26} strokeWidth={2.5} />
+    <span className="absolute right-full mr-3 sm:mr-4 bg-white text-slate-900 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-bold shadow-lg whitespace-nowrap opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none flex items-center gap-2">
       Chat with us! <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
     </span>
   </motion.a>
@@ -136,21 +136,21 @@ const Section = ({ className = '', children, id = '' }) => {
 };
 
 const Container = ({ children, className = '' }) => (
-  <div className={`max-w-7xl mx-auto px-6 lg:px-8 ${className}`}>
+  <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${className}`}>
     {children}
   </div>
 );
 
 const Heading = ({ children, level = 2, className = '', align = 'center' }) => {
   const styles = {
-    1: "text-5xl md:text-7xl font-black tracking-tight",
-    2: "text-3xl md:text-5xl font-bold tracking-tight mb-6",
-    3: "text-2xl md:text-3xl font-bold tracking-tight mb-4"
+    1: "text-3xl sm:text-5xl md:text-7xl font-black tracking-tight",
+    2: "text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight mb-6",
+    3: "text-xl sm:text-2xl md:text-3xl font-bold tracking-tight mb-4"
   };
   const alignment = align === 'left' ? 'text-left' : 'text-center';
    
   return (
-    <motion.div variants={fadeInUp} className={level === 2 ? `mb-16 ${alignment}` : ""}>
+    <motion.div variants={fadeInUp} className={level === 2 ? `mb-16 ${alignment}` : alignment}>
       <h2 className={`${styles[level]} ${className} text-slate-900 leading-tight`}>
         {children}
       </h2>
@@ -164,7 +164,7 @@ const Heading = ({ children, level = 2, className = '', align = 'center' }) => {
 const Card = ({ title, children, icon: Icon, className = '' }) => (
   <motion.div 
     variants={fadeInUp}
-    className={`group bg-white p-10 rounded-3xl shadow-[0_4px_20px_-5px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-5px_rgba(0,0,0,0.1)] transition-all duration-300 border border-slate-100 h-full flex flex-col relative overflow-hidden ${className}`}
+    className={`group bg-white p-8 sm:p-10 rounded-3xl shadow-[0_4px_20px_-5px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-5px_rgba(0,0,0,0.1)] transition-all duration-300 border border-slate-100 h-full flex flex-col relative overflow-hidden ${className}`}
   >
     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal-400 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
     
@@ -173,7 +173,7 @@ const Card = ({ title, children, icon: Icon, className = '' }) => (
         <Icon size={30} strokeWidth={1.5} />
       </div>
     )}
-    <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-teal-600 transition-colors">{title}</h3>
+    <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-4 group-hover:text-teal-600 transition-colors">{title}</h3>
     <div className="text-slate-600 leading-relaxed flex-grow font-medium">
       {children}
     </div>
@@ -273,14 +273,14 @@ const Navbar = ({ activePage, navigate }) => {
           onClick={() => navigate('home')}
         >
           <div
-  className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg">
-  <img
-    src="/images/logo/ivs-logo.png.png"
-    alt="Iqra Virtual Solutions logo"
-    className="w-10 h-10 object-contain p-1"
-  />
-</div>
-
+            className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg"
+          >
+            <img
+              src="/images/logo/ivs-logo.png.png"
+              alt="Iqra Virtual Solutions logo"
+              className="w-10 h-10 object-contain p-1"
+            />
+          </div>
 
           <span className={`font-bold text-xl tracking-tight transition-colors duration-300 ${scrolled ? 'text-slate-800' : 'text-white'}`}>
             Iqra Virtual <span className={`transition-colors ${scrolled ? 'text-teal-600' : 'text-teal-400'}`}>Solutions</span>
@@ -366,25 +366,29 @@ const Footer = ({ navigate }) => (
     <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-teal-500/50 to-transparent"></div>
     
     <Container>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-16 mb-12 md:mb-20">
         <div className="space-y-6">
           <div className="flex items-center gap-3">
-           <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg">
-  <img
-    src="/images/logo/ivs-logo.png.png"
-    alt="Iqra Virtual Solutions logo"
-    className="w-10 h-10 object-contain p-1"
-  />
-</div>
+            <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg">
+              <img
+                src="/images/logo/ivs-logo.png.png"
+                alt="Iqra Virtual Solutions logo"
+                className="w-10 h-10 object-contain p-1"
+              />
+            </div>
 
             <span className="font-bold text-xl tracking-tight">Iqra Virtual Solutions</span>
           </div>
-          <p className="text-slate-400 leading-relaxed">
+          <p className="text-slate-400 leading-relaxed text-sm sm:text-base">
             Empowering education and businesses with cutting-edge technology. From Peshawar to the world, we build the digital future.
           </p>
-          <div className="flex gap-4 pt-2">
+          <div className="flex gap-3 sm:gap-4 pt-2">
             {[Facebook, Linkedin, Youtube].map((Icon, i) => (
-              <a key={i} href="#" className="w-12 h-12 bg-slate-700/50 rounded-full flex items-center justify-center hover:bg-teal-500 hover:text-white transition-all duration-300 text-slate-400 border border-slate-600 hover:border-teal-500 hover:-translate-y-1">
+              <a
+                key={i}
+                href="#"
+                className="w-10 h-10 sm:w-12 sm:h-12 bg-slate-700/50 rounded-full flex items-center justify-center hover:bg-teal-500 hover:text-white transition-all duration-300 text-slate-400 border border-slate-600 hover:border-teal-500 hover:-translate-y-1"
+              >
                 <Icon size={20} />
               </a>
             ))}
@@ -392,13 +396,13 @@ const Footer = ({ navigate }) => (
         </div>
 
         <div>
-          <h4 className="text-lg font-bold mb-8 text-white">Quick Links</h4>
-          <ul className="space-y-4">
+          <h4 className="text-base sm:text-lg font-bold mb-6 sm:mb-8 text-white">Quick Links</h4>
+          <ul className="space-y-3 sm:space-y-4">
             {['Home', 'About Us', 'Services', 'Blog', 'Contact'].map((item) => (
               <li key={item}>
                 <button 
                   onClick={() => navigate(item.toLowerCase().split(' ')[0])}
-                  className="text-slate-400 hover:text-teal-400 hover:translate-x-2 transition-all flex items-center gap-3 group"
+                  className="text-slate-400 hover:text-teal-400 hover:translate-x-2 transition-all flex items-center gap-3 group text-sm sm:text-base"
                 >
                   <span className="w-1.5 h-1.5 bg-slate-600 rounded-full group-hover:bg-teal-400 transition-colors"></span>
                   {item}
@@ -409,46 +413,60 @@ const Footer = ({ navigate }) => (
         </div>
 
         <div>
-          <h4 className="text-lg font-bold mb-8 text-white">Services</h4>
-          <ul className="space-y-4">
+          <h4 className="text-base sm:text-lg font-bold mb-6 sm:mb-8 text-white">Services</h4>
+          <ul className="space-y-3 sm:space-y-4">
             {['LMS Development', 'Web Development', 'Mobile Apps', 'Cloud Hosting', 'Cybersecurity'].map((item) => (
               <li key={item}>
-                <span className="text-slate-400 hover:text-white cursor-pointer transition-colors block">{item}</span>
+                <span className="text-slate-400 hover:text-white cursor-pointer transition-colors block text-sm sm:text-base">
+                  {item}
+                </span>
               </li>
             ))}
           </ul>
         </div>
 
         <div>
-          <h4 className="text-lg font-bold mb-8 text-white">Contact Info</h4>
+          <h4 className="text-base sm:text-lg font-bold mb-6 sm:mb-8 text-white">Contact Info</h4>
           <ul className="space-y-6">
             <li className="flex items-start gap-4 text-slate-400 group">
               <div className="w-10 h-10 rounded-full bg-slate-700/50 flex items-center justify-center shrink-0 text-teal-500 group-hover:bg-teal-500 group-hover:text-white transition-colors">
                 <MapPin size={18} />
               </div>
-              <span className="mt-2 leading-relaxed">Gulbahar, Peshawar, Pakistan</span>
+              <span className="mt-2 leading-relaxed text-sm sm:text-base">
+                Gulbahar, Peshawar, Pakistan
+              </span>
             </li>
             <li className="flex items-center gap-4 text-slate-400 group">
-               <div className="w-10 h-10 rounded-full bg-slate-700/50 flex items-center justify-center shrink-0 text-teal-500 group-hover:bg-teal-500 group-hover:text-white transition-colors">
+              <div className="w-10 h-10 rounded-full bg-slate-700/50 flex items-center justify-center shrink-0 text-teal-500 group-hover:bg-teal-500 group-hover:text-white transition-colors">
                 <Phone size={18} />
               </div>
-              <span className="font-medium text-white">+92 300 000 0000</span>
+              <span className="font-medium text-white text-sm sm:text-base">
+                +92 300 000 0000
+              </span>
             </li>
             <li className="flex items-center gap-4 text-slate-400 group">
-               <div className="w-10 h-10 rounded-full bg-slate-700/50 flex items-center justify-center shrink-0 text-teal-500 group-hover:bg-teal-500 group-hover:text-white transition-colors">
+              <div className="w-10 h-10 rounded-full bg-slate-700/50 flex items-center justify-center shrink-0 text-teal-500 group-hover:bg-teal-500 group-hover:text-white transition-colors">
                 <Mail size={18} />
               </div>
-              <span className="font-medium text-white">info@iqravirtual.com</span>
+              <span className="font-medium text-white text-sm sm:text-base">
+                info@iqravirtual.com
+              </span>
             </li>
           </ul>
         </div>
       </div>
       
-      <div className="border-t border-slate-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 text-sm">
-        <p>&copy; {new Date().getFullYear()} Iqra Virtual Solutions. All rights reserved.</p>
-        <div className="flex gap-8">
-          <a href="#" className="hover:text-teal-400 transition-colors">Privacy Policy</a>
-          <a href="#" className="hover:text-teal-400 transition-colors">Terms of Service</a>
+      <div className="border-t border-slate-700 pt-8 flex flex-col md:flex-row md:flex-wrap justify-center md:justify-between items-center gap-4 md:gap-6 text-slate-500 text-xs sm:text-sm">
+        <p className="text-center md:text-left">
+          &copy; {new Date().getFullYear()} Iqra Virtual Solutions. All rights reserved.
+        </p>
+        <div className="flex gap-4 sm:gap-8 flex-wrap justify-center md:justify-end">
+          <a href="#" className="hover:text-teal-400 transition-colors">
+            Privacy Policy
+          </a>
+          <a href="#" className="hover:text-teal-400 transition-colors">
+            Terms of Service
+          </a>
         </div>
       </div>
     </Container>
