@@ -540,15 +540,15 @@ const HomePage = ({ navigate }) => (
       </Container>
     </div>
 
-   {/* Trust Badges */}
+ {/* Trust Badges */}
 <div className="relative z-20 -mt-16 mx-4 lg:mx-8">
-  <Container className="bg-white/80 backdrop-blur-md border border-white shadow-2xl rounded-3xl p-6 sm:p-8 lg:p-12">
+  <Container className="bg-white/80 backdrop-blur-md border border-white shadow-2xl rounded-3xl p-5 sm:p-8 lg:p-12">
     <motion.div
       variants={staggerContainer}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 sm:gap-8 lg:gap-12 divide-y sm:divide-y-0 md:divide-x divide-slate-100"
+      className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 divide-x-0 md:divide-x divide-slate-100"
     >
       {[
         { label: "Since 2013", sub: "Years of Excellence", icon: CheckCircle },
@@ -559,16 +559,16 @@ const HomePage = ({ navigate }) => (
         <motion.div
           key={index}
           variants={fadeInUp}
-          className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 md:gap-5 justify-center md:justify-start md:pl-8 first:pl-0 text-center sm:text-left py-3 sm:py-0"
+          className="flex items-center gap-3 sm:gap-4 justify-center md:justify-start md:pl-8 first:pl-0 text-center md:text-left"
         >
-          <div className="text-teal-600 bg-teal-50 p-3 sm:p-4 rounded-2xl shrink-0 shadow-sm mb-2 sm:mb-0">
-            <badge.icon size={24} className="sm:w-[26px] sm:h-[26px]" />
+          <div className="text-teal-600 bg-teal-50 p-2.5 sm:p-3.5 md:p-4 rounded-2xl shrink-0 shadow-sm">
+            <badge.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" />
           </div>
           <div>
-            <p className="text-base sm:text-lg md:text-xl font-bold text-slate-900 leading-snug mb-1">
+            <p className="text-sm sm:text-base md:text-lg font-bold text-slate-900 leading-snug mb-1">
               {badge.label}
             </p>
-            <p className="text-xs sm:text-sm text-slate-500 font-medium uppercase tracking-wide">
+            <p className="text-[11px] sm:text-xs md:text-sm text-slate-500 font-medium uppercase tracking-wide">
               {badge.sub}
             </p>
           </div>
