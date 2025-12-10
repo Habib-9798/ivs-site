@@ -1510,159 +1510,206 @@ ${formData.message}`;
 
   return (
     <>
-      <div className="bg-gradient-to-b from-slate-800 via-blue-900 to-slate-800 py-40 text-white relative overflow-hidden">
-         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
-         <Container className="relative z-10 text-center">
-           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="text-5xl md:text-7xl font-black tracking-tight mb-8">Get In Touch</motion.h1>
-           <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto font-light">
-             Let's build something amazing together.
-           </motion.p>
-         </Container>
+      <div className="bg-gradient-to-b from-slate-800 via-blue-900 to-slate-800 py-28 md:py-40 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+        <Container className="relative z-10 text-center px-4 sm:px-6">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight mb-6 md:mb-8"
+          >
+            Get In Touch
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-base sm:text-lg md:text-2xl text-slate-300 max-w-3xl mx-auto font-light leading-relaxed"
+          >
+            Let's build something amazing together.
+          </motion.p>
+        </Container>
       </div>
 
       <Section>
-        <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+        <Container className="px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20">
             {/* Contact Form */}
-            <motion.div variants={fadeInUp} className="bg-white p-10 rounded-[2.5rem] shadow-2xl shadow-slate-200/50 border border-slate-100">
+            <motion.div
+              variants={fadeInUp}
+              className="bg-white p-6 sm:p-8 lg:p-10 rounded-[2.5rem] shadow-2xl shadow-slate-200/50 border border-slate-100"
+            >
               <Heading align="left" level={2}>Send us a Message</Heading>
-              <p className="text-slate-500 mb-10 text-lg">Fill out the form below and we'll get back to you within 24 hours.</p>
+              <p className="text-slate-500 mb-6 sm:mb-10 text-base sm:text-lg">
+                Fill out the form below and we'll get back to you within 24 hours.
+              </p>
               
-              <form className="space-y-8" onSubmit={handleSubmit}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <form className="space-y-6 sm:space-y-8" onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
                   <div>
-                    <label className="block text-sm font-bold text-slate-700 mb-3 uppercase tracking-wider">First Name</label>
+                    <label className="block text-xs sm:text-sm font-bold text-slate-700 mb-2 sm:mb-3 uppercase tracking-wider">
+                      First Name
+                    </label>
                     <input 
                       type="text" 
                       name="firstName"
                       value={formData.firstName}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-transparent focus:bg-white focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10 outline-none transition-all font-medium" 
+                      className="w-full px-4 sm:px-6 py-3 sm:py-4 rounded-2xl bg-slate-50 border border-transparent focus:bg-white focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10 outline-none transition-all font-medium" 
                       placeholder="John" 
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-bold text-slate-700 mb-3 uppercase tracking-wider">Last Name</label>
+                    <label className="block text-xs sm:text-sm font-bold text-slate-700 mb-2 sm:mb-3 uppercase tracking-wider">
+                      Last Name
+                    </label>
                     <input 
                       type="text" 
                       name="lastName"
                       value={formData.lastName}
                       onChange={handleChange}
-                      className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-transparent focus:bg-white focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10 outline-none transition-all font-medium" 
+                      className="w-full px-4 sm:px-6 py-3 sm:py-4 rounded-2xl bg-slate-50 border border-transparent focus:bg-white focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10 outline-none transition-all font-medium" 
                       placeholder="Doe" 
                     />
                   </div>
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-3 uppercase tracking-wider">Email Address</label>
+                  <label className="block text-xs sm:text-sm font-bold text-slate-700 mb-2 sm:mb-3 uppercase tracking-wider">
+                    Email Address
+                  </label>
                   <input 
                     type="email" 
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-transparent focus:bg-white focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10 outline-none transition-all font-medium" 
+                    className="w-full px-4 sm:px-6 py-3 sm:py-4 rounded-2xl bg-slate-50 border border-transparent focus:bg-white focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10 outline-none transition-all font-medium" 
                     placeholder="john@example.com" 
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-3 uppercase tracking-wider">Phone Number</label>
+                  <label className="block text-xs sm:text-sm font-bold text-slate-700 mb-2 sm:mb-3 uppercase tracking-wider">
+                    Phone Number
+                  </label>
                   <input 
                     type="tel" 
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-transparent focus:bg-white focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10 outline-none transition-all font-medium" 
+                    className="w-full px-4 sm:px-6 py-3 sm:py-4 rounded-2xl bg-slate-50 border border-transparent focus:bg-white focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10 outline-none transition-all font-medium" 
                     placeholder="+92 300 0000000" 
                   />
-                  <p className="text-xs text-gray-500 mt-1">Please include country code (e.g. +92 300 0000000).</p>
+                  <p className="text-[11px] sm:text-xs text-gray-500 mt-1">
+                    Please include country code (e.g. +92 300 0000000).
+                  </p>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-3 uppercase tracking-wider">Subject</label>
+                  <label className="block text-xs sm:text-sm font-bold text-slate-700 mb-2 sm:mb-3 uppercase tracking-wider">
+                    Subject
+                  </label>
                   <input 
                     type="text"
                     name="subject" 
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-transparent focus:bg-white focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10 outline-none transition-all font-medium"
+                    className="w-full px-4 sm:px-6 py-3 sm:py-4 rounded-2xl bg-slate-50 border border-transparent focus:bg-white focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10 outline-none transition-all font-medium"
                     placeholder="Project Inquiry"
                     required
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-3 uppercase tracking-wider">Message</label>
+                  <label className="block text-xs sm:text-sm font-bold text-slate-700 mb-2 sm:mb-3 uppercase tracking-wider">
+                    Message
+                  </label>
                   <textarea 
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     rows="5" 
-                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-transparent focus:bg-white focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10 outline-none transition-all font-medium resize-none" 
+                    className="w-full px-4 sm:px-6 py-3 sm:py-4 rounded-2xl bg-slate-50 border border-transparent focus:bg-white focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10 outline-none transition-all font-medium resize-none" 
                     placeholder="Tell us about your project..."
                     required
                   ></textarea>
                 </div>
                 
-                <Button type="submit" variant="primary" className="w-full !py-5 !text-lg shadow-xl shadow-blue-900/20">
+                <Button
+                  type="submit"
+                  variant="primary"
+                  className="w-full !py-4 sm:!py-5 !text-base sm:!text-lg shadow-xl shadow-blue-900/20"
+                >
                   Send Message
                 </Button>
               </form>
             </motion.div>
 
             {/* Contact Info */}
-            <motion.div variants={staggerContainer} className="flex flex-col justify-center">
-               <Heading align="left" level={3}>Contact Information</Heading>
-               <div className="space-y-10 mt-10">
-                 <motion.div variants={fadeInUp} className="flex items-start gap-8 group">
-                   <div className="w-16 h-16 bg-teal-50 text-teal-600 rounded-2xl flex items-center justify-center shrink-0 shadow-sm group-hover:bg-teal-500 group-hover:text-white transition-all duration-300">
-                     <Phone size={28} />
-                   </div>
-                   <div>
-                     <h4 className="font-bold text-slate-900 text-xl mb-1">Phone Number</h4>
-                     <p className="text-slate-600 text-lg">+92 300 000 0000</p>
-                     <p className="text-slate-400 text-sm mt-1">Mon-Fri 10am-6pm</p>
-                   </div>
-                 </motion.div>
+            <motion.div variants={staggerContainer} className="flex flex-col justify-center mt-10 lg:mt-0">
+              <Heading align="left" level={3}>Contact Information</Heading>
+              <div className="space-y-8 sm:space-y-10 mt-8 sm:mt-10">
+                <motion.div variants={fadeInUp} className="flex items-start gap-5 sm:gap-8 group">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-teal-50 text-teal-600 rounded-2xl flex items-center justify-center shrink-0 shadow-sm group-hover:bg-teal-500 group-hover:text-white transition-all duration-300">
+                    <Phone size={26} className="sm:w-7 sm:h-7" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 text-lg sm:text-xl mb-1">
+                      Phone Number
+                    </h4>
+                    <p className="text-slate-600 text-base sm:text-lg">+92 300 000 0000</p>
+                    <p className="text-slate-400 text-xs sm:text-sm mt-1">Mon-Fri 10am-6pm</p>
+                  </div>
+                </motion.div>
 
-                 <motion.div variants={fadeInUp} className="flex items-start gap-8 group">
-                   <div className="w-16 h-16 bg-teal-50 text-teal-600 rounded-2xl flex items-center justify-center shrink-0 shadow-sm group-hover:bg-teal-500 group-hover:text-white transition-all duration-300">
-                     <Mail size={28} />
-                   </div>
-                   <div>
-                     <h4 className="font-bold text-slate-900 text-xl mb-1">Email Address</h4>
-                     <p className="text-slate-600 text-lg">info@iqravirtual.com</p>
-                     <p className="text-slate-400 text-sm mt-1">For support and inquiries</p>
-                   </div>
-                 </motion.div>
+                <motion.div variants={fadeInUp} className="flex items-start gap-5 sm:gap-8 group">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-teal-50 text-teal-600 rounded-2xl flex items-center justify-center shrink-0 shadow-sm group-hover:bg-teal-500 group-hover:text-white transition-all duration-300">
+                    <Mail size={26} className="sm:w-7 sm:h-7" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 text-lg sm:text-xl mb-1">
+                      Email Address
+                    </h4>
+                    <p className="text-slate-600 text-base sm:text-lg">info@iqravirtual.com</p>
+                    <p className="text-slate-400 text-xs sm:text-sm mt-1">
+                      For support and inquiries
+                    </p>
+                  </div>
+                </motion.div>
 
-                 <motion.div variants={fadeInUp} className="flex items-start gap-8 group">
-                   <div className="w-16 h-16 bg-teal-50 text-teal-600 rounded-2xl flex items-center justify-center shrink-0 shadow-sm group-hover:bg-teal-500 group-hover:text-white transition-all duration-300">
-                     <MapPin size={28} />
-                   </div>
-                   <div>
-                     <h4 className="font-bold text-slate-900 text-xl mb-1">Head Office</h4>
-                     <p className="text-slate-600 text-lg leading-relaxed">Gulbahar, Peshawar, Pakistan</p>
-                   </div>
-                 </motion.div>
-               </div>
+                <motion.div variants={fadeInUp} className="flex items-start gap-5 sm:gap-8 group">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-teal-50 text-teal-600 rounded-2xl flex items-center justify-center shrink-0 shadow-sm group-hover:bg-teal-500 group-hover:text-white transition-all duration-300">
+                    <MapPin size={26} className="sm:w-7 sm:h-7" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 text-lg sm:text-xl mb-1">
+                      Head Office
+                    </h4>
+                    <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
+                      Gulbahar, Peshawar, Pakistan
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
 
-               {/* Map Embed */}
-               <motion.div variants={scaleIn} className="mt-16 bg-slate-100 rounded-[2rem] h-80 w-full overflow-hidden relative border-4 border-white shadow-xl shadow-slate-200/50">
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13229.0!2d71.56!3d34.00!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d9170d37213597%3A0x205a0722835b530!2sGulbahar%2C%20Peshawar!5e0!3m2!1sen!2s" 
-                    width="100%" 
-                    height="100%" 
-                    style={{ border: 0 }} 
-                    allowFullScreen="" 
-                    loading="lazy" 
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Office Location"
-                  ></iframe>
-               </motion.div>
+              {/* Map Embed */}
+              <motion.div
+                variants={scaleIn}
+                className="mt-12 sm:mt-16 bg-slate-100 rounded-[2rem] h-64 sm:h-72 lg:h-80 w-full overflow-hidden relative border-4 border-white shadow-xl shadow-slate-200/50"
+              >
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13229.0!2d71.56!3d34.00!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d9170d37213597%3A0x205a0722835b530!2sGulbahar%2C%20Peshawar!5e0!3m2!1sen!2s" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen="" 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Office Location"
+                ></iframe>
+              </motion.div>
             </motion.div>
           </div>
         </Container>
