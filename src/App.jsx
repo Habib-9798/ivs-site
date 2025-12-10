@@ -540,39 +540,43 @@ const HomePage = ({ navigate }) => (
       </Container>
     </div>
 
-    {/* Trust Badges */}
-    <div className="relative z-20 -mt-16 mx-4 lg:mx-8">
-      <Container className="bg-white/80 backdrop-blur-md border border-white shadow-2xl rounded-3xl p-6 sm:p-8 lg:p-12">
+   {/* Trust Badges */}
+<div className="relative z-20 -mt-16 mx-4 lg:mx-8">
+  <Container className="bg-white/80 backdrop-blur-md border border-white shadow-2xl rounded-3xl p-6 sm:p-8 lg:p-12">
+    <motion.div
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 sm:gap-8 lg:gap-12 divide-y sm:divide-y-0 md:divide-x divide-slate-100"
+    >
+      {[
+        { label: "Since 2013", sub: "Years of Excellence", icon: CheckCircle },
+        { label: "PSEB Registered", sub: "Certified Company", icon: Shield },
+        { label: "Global Clients", sub: "USA, UAE, UK, KSA", icon: Globe },
+        { label: "End-to-End", sub: "IT & LMS Solutions", icon: Server }
+      ].map((badge, index) => (
         <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 divide-x-0 md:divide-x divide-slate-100"
+          key={index}
+          variants={fadeInUp}
+          className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 md:gap-5 justify-center md:justify-start md:pl-8 first:pl-0 text-center sm:text-left py-3 sm:py-0"
         >
-          {[
-            { label: "Since 2013", sub: "Years of Excellence", icon: CheckCircle },
-            { label: "PSEB Registered", sub: "Certified Company", icon: Shield },
-            { label: "Global Clients", sub: "USA, UAE, UK, KSA", icon: Globe },
-            { label: "End-to-End", sub: "IT & LMS Solutions", icon: Server }
-          ].map((badge, index) => (
-            <motion.div
-              key={index}
-              variants={fadeInUp}
-              className="flex items-center gap-4 sm:gap-5 justify-center md:justify-start md:pl-8 first:pl-0 text-center md:text-left"
-            >
-              <div className="text-teal-600 bg-teal-50 p-3 sm:p-4 rounded-2xl shrink-0 shadow-sm">
-                <badge.icon size={24} className="sm:w-[26px] sm:h-[26px]" />
-              </div>
-              <div>
-                <p className="text-lg sm:text-xl font-bold text-slate-900 leading-none mb-1">{badge.label}</p>
-                <p className="text-xs sm:text-sm text-slate-500 font-medium uppercase tracking-wide">{badge.sub}</p>
-              </div>
-            </motion.div>
-          ))}
+          <div className="text-teal-600 bg-teal-50 p-3 sm:p-4 rounded-2xl shrink-0 shadow-sm mb-2 sm:mb-0">
+            <badge.icon size={24} className="sm:w-[26px] sm:h-[26px]" />
+          </div>
+          <div>
+            <p className="text-base sm:text-lg md:text-xl font-bold text-slate-900 leading-snug mb-1">
+              {badge.label}
+            </p>
+            <p className="text-xs sm:text-sm text-slate-500 font-medium uppercase tracking-wide">
+              {badge.sub}
+            </p>
+          </div>
         </motion.div>
-      </Container>
-    </div>
+      ))}
+    </motion.div>
+  </Container>
+</div>
 
     {/* Core Services Preview */}
     <Section className="bg-slate-50/50">
