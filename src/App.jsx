@@ -782,11 +782,22 @@ const HomePage = ({ navigate }) => (
 
 const AboutPage = ({ navigate }) => (
   <>
-    <div className="bg-gradient-to-b from-slate-800 via-blue-900 to-slate-800 py-40 text-white relative overflow-hidden">
+    <div className="bg-gradient-to-b from-slate-800 via-blue-900 to-slate-800 py-28 md:py-40 text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
-      <Container className="relative z-10 text-center">
-        <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="text-5xl md:text-7xl font-black tracking-tight mb-8">About Us</motion.h1>
-        <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto font-light">
+      <Container className="relative z-10 text-center px-4 sm:px-6">
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight mb-6 md:mb-8"
+        >
+          About Us
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="text-base sm:text-lg md:text-2xl text-slate-300 max-w-3xl mx-auto font-light leading-relaxed"
+        >
           Bridging the gap between Education and Technology since 2013.
         </motion.p>
       </Container>
@@ -794,13 +805,19 @@ const AboutPage = ({ navigate }) => (
 
     {/* Who We Are */}
     <Section>
-      <Container>
+      <Container className="px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <Heading>Who We Are</Heading>
-          <motion.p variants={fadeInUp} className="text-slate-600 text-xl leading-relaxed mb-10 font-light">
+          <motion.p
+            variants={fadeInUp}
+            className="text-slate-600 text-base sm:text-lg md:text-xl leading-relaxed mb-8 md:mb-10 font-light"
+          >
             Iqra Virtual Solutions (IVS) is a premier IT and EdTech company based in Peshawar, Pakistan. Established in 2013 and registered with the Pakistan Software Export Board (PSEB), we specialize in delivering high-quality digital solutions to clients across the globe, including the USA, UAE, KSA, and UK.
           </motion.p>
-          <motion.p variants={fadeInUp} className="text-slate-600 text-xl leading-relaxed font-light">
+          <motion.p
+            variants={fadeInUp}
+            className="text-slate-600 text-base sm:text-lg md:text-xl leading-relaxed font-light"
+          >
             Our mission is to provide affordable, cutting-edge technology that empowers educational institutions and businesses. From custom Learning Management Systems (LMS) to complex cloud infrastructure and automation, we are dedicated to bridging the gap between traditional methods and the digital future.
           </motion.p>
         </div>
@@ -809,48 +826,68 @@ const AboutPage = ({ navigate }) => (
 
     {/* Founder Section */}
     <Section className="bg-slate-50">
-      <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
+      <Container className="px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           <motion.div variants={scaleIn} className="lg:col-span-5">
-            <div className="bg-gradient-to-br from-slate-800 to-slate-950 rounded-[3rem] overflow-hidden shadow-2xl shadow-slate-300 aspect-[3/4] flex items-end justify-center relative group border-8 border-white transform hover:rotate-2 transition-transform duration-500">
+            <div className="bg-gradient-to-br from-slate-800 to-slate-950 rounded-[2.5rem] md:rounded-[3rem] overflow-hidden shadow-2xl shadow-slate-300 aspect-[3/4] flex items-end justify-center relative group border-8 border-white transform hover:rotate-2 transition-transform duration-500">
               <img
                 src="/images/team/founder.jpg.jpg"
                 alt="Dr. Ahmad Ali"
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-              <div className="p-10 bg-gradient-to-t from-black/90 via-black/70 to-transparent w-full relative z-10">
-                <h3 className="text-white text-3xl font-bold mb-2">Dr. Ahmad Ali</h3>
-                <p className="text-teal-400 font-medium tracking-wider uppercase text-sm">Founder & CEO</p>
+              <div className="p-6 sm:p-8 md:p-10 bg-gradient-to-t from-black/90 via-black/70 to-transparent w-full relative z-10">
+                <h3 className="text-white text-2xl sm:text-3xl font-bold mb-2">Dr. Ahmad Ali</h3>
+                <p className="text-teal-400 font-medium tracking-wider uppercase text-xs sm:text-sm">
+                  Founder & CEO
+                </p>
               </div>
             </div>
           </motion.div>
           <div className="lg:col-span-7">
             <Heading align="left">Meet Our Founder</Heading>
-            <motion.h3 variants={fadeInUp} className="text-2xl font-bold text-red-800 mb-8">Dr. Ahmad Ali</motion.h3>
-            <motion.p variants={fadeInUp} className="text-slate-600 mb-12 text-lg leading-relaxed">
+            <motion.h3
+              variants={fadeInUp}
+              className="text-xl sm:text-2xl font-bold text-red-800 mb-6 sm:mb-8"
+            >
+              Dr. Ahmad Ali
+            </motion.h3>
+            <motion.p
+              variants={fadeInUp}
+              className="text-slate-600 mb-8 md:mb-12 text-base sm:text-lg leading-relaxed"
+            >
               Dr. Ahmad Ali is a visionary entrepreneur, respected educator, and IT professional who has dedicated his career to modernizing education through technology. He is the founder of Iqra Virtual Solutions, Iqra Virtual School, QuranHomeTutor.com, and Darul Qurra Global Classroom.
             </motion.p>
-             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
-              <motion.div variants={fadeInUp} className="bg-white p-8 rounded-2xl shadow-lg shadow-slate-100 border border-slate-100">
-                <h4 className="font-bold text-slate-900 mb-6 flex items-center gap-3 text-lg">
-                  <div className="p-2 bg-teal-50 rounded-lg text-teal-500"><BookOpen size={24} /></div> 
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-8 md:mt-10">
+              <motion.div
+                variants={fadeInUp}
+                className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg shadow-slate-100 border border-slate-100"
+              >
+                <h4 className="font-bold text-slate-900 mb-4 sm:mb-6 flex items-center gap-3 text-base sm:text-lg">
+                  <div className="p-2 bg-teal-50 rounded-lg text-teal-500">
+                    <BookOpen size={22} className="sm:w-6 sm:h-6" />
+                  </div>
                   Academic Excellence
                 </h4>
-                <ul className="text-sm text-slate-600 space-y-4">
+                <ul className="text-sm text-slate-600 space-y-3 sm:space-y-4">
                   <li>• Ph.D. in Qir’aat </li>
                   <li>• M.Phil in Tafsir & Hadith </li>
-                  <li>• B.A (Hons.) in Usuluddeen  </li>
+                  <li>• B.A (Hons.) in Usuluddeen </li>
                   <li>• Memorized Quran with advanced Tajweed training</li>
                 </ul>
               </motion.div>
-              <motion.div variants={fadeInUp} className="bg-white p-8 rounded-2xl shadow-lg shadow-slate-100 border border-slate-100">
-                <h4 className="font-bold text-slate-900 mb-6 flex items-center gap-3 text-lg">
-                  <div className="p-2 bg-red-50 rounded-lg text-red-800"><Globe size={24} /></div>
+              <motion.div
+                variants={fadeInUp}
+                className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg shadow-slate-100 border border-slate-100"
+              >
+                <h4 className="font-bold text-slate-900 mb-4 sm:mb-6 flex items-center gap-3 text-base sm:text-lg">
+                  <div className="p-2 bg-red-50 rounded-lg text-red-800">
+                    <Globe size={22} className="sm:w-6 sm:h-6" />
+                  </div>
                   Global Impact
                 </h4>
-                <ul className="text-sm text-slate-600 space-y-4">
+                <ul className="text-sm text-slate-600 space-y-3 sm:space-y-4">
                   <li>• Pioneer of multiple online education platforms helping thousands of students.</li>
                   <li>• Established Darulqurra Institute & Abida Sweet Home orphanage.</li>
                   <li>• Served as Mohtamim of Madrassa Markazi Darulqurra.</li>
@@ -858,7 +895,10 @@ const AboutPage = ({ navigate }) => (
               </motion.div>
             </div>
 
-            <motion.p variants={fadeInUp} className="text-slate-600 italic mt-12 border-l-4 border-teal-500 pl-8 text-xl leading-relaxed py-2">
+            <motion.p
+              variants={fadeInUp}
+              className="text-slate-600 italic mt-10 md:mt-12 border-l-4 border-teal-500 pl-6 sm:pl-8 text-lg sm:text-xl leading-relaxed py-2"
+            >
               "My vision is to combine strong religious and academic foundations with modern IT, AI, and digital learning to build a future where quality education is accessible and affordable for everyone."
             </motion.p>
           </div>
@@ -868,40 +908,75 @@ const AboutPage = ({ navigate }) => (
 
     {/* Team Section */}
     <Section>
-      <Container>
+      <Container className="px-4 sm:px-6">
         <Heading>Our Team</Heading>
-        <motion.p variants={fadeInUp} className="text-center text-slate-500 max-w-2xl mx-auto mb-20 text-lg">
+        <motion.p
+          variants={fadeInUp}
+          className="text-center text-slate-500 max-w-2xl mx-auto mb-12 md:mb-20 text-base sm:text-lg"
+        >
           IVS boasts a multidisciplinary team of IT engineers, designers, and educational strategists working together to support our global clients.
         </motion.p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {[
-            { name: "Muhammad Mustafa Ahmad", role: "PROJECT LEAD & AI AUTOMATION SPECIALIST", desc: "Leads major projects, AI automation workflows, and chatbot solutions for clients.", image: "/images/team/mustafa.jpg.jpg" },
-            { name: "Zulqarnain Haider", role: "LEAD SOFTWARE ENGINEER (LMS & WEB)", desc: "Develops custom LMS platforms and scalable web applications with secure architecture.", image: "/images/team/zulqarnain.jpg.jpg" },
-            { name: "Habibullah", role: "E-COMMERCE & GROWTH SPECIALIST", desc: "Works on Shopify, WordPress, social media marketing, and AI integrations for business automation.", image: "/images/team/habibullah.jpg.jpg" },
-             { name: "Muhammad Aamir", role: "JUNIOR WEB DEVELOPER", desc: "Supports web development tasks, including custom software modules and lead-management systems.", image: "/images/team/aamir.jpg.jpg" },
-            { name: "Mian Abdul Hameed", role: "CYBER SECURITY EXPERT", desc: "Ensures system security, infrastructure hardening, and data protection for client projects.", image: "/images/team/hameed.jpg.jpg" },
-            { name: "Abdullah Wasim", role: "JUNIOR SOFTWARE ENGINEER", desc: "Contributes to custom software development and assists in building advanced system modules.", image: "/images/team/abdullah.jpg.png" },
+            {
+              name: "Muhammad Mustafa Ahmad",
+              role: "PROJECT LEAD & AI AUTOMATION SPECIALIST",
+              desc: "Leads major projects, AI automation workflows, and chatbot solutions for clients.",
+              image: "/images/team/mustafa.jpg.jpg"
+            },
+            {
+              name: "Zulqarnain Haider",
+              role: "LEAD SOFTWARE ENGINEER (LMS & WEB)",
+              desc: "Develops custom LMS platforms and scalable web applications with secure architecture.",
+              image: "/images/team/zulqarnain.jpg.jpg"
+            },
+            {
+              name: "Habibullah",
+              role: "E-COMMERCE & GROWTH SPECIALIST",
+              desc: "Works on Shopify, WordPress, social media marketing, and AI integrations for business automation.",
+              image: "/images/team/habibullah.jpg.jpg"
+            },
+            {
+              name: "Muhammad Aamir",
+              role: "JUNIOR WEB DEVELOPER",
+              desc: "Supports web development tasks, including custom software modules and lead-management systems.",
+              image: "/images/team/aamir.jpg.jpg"
+            },
+            {
+              name: "Mian Abdul Hameed",
+              role: "CYBER SECURITY EXPERT",
+              desc: "Ensures system security, infrastructure hardening, and data protection for client projects.",
+              image: "/images/team/hameed.jpg.jpg"
+            },
+            {
+              name: "Abdullah Wasim",
+              role: "JUNIOR SOFTWARE ENGINEER",
+              desc: "Contributes to custom software development and assists in building advanced system modules.",
+              image: "/images/team/abdullah.jpg.png"
+            }
           ].map((member, idx) => (
-            <motion.div 
-              key={idx} 
+            <motion.div
+              key={idx}
               variants={fadeInUp}
               whileHover={{ y: -10 }}
               className="bg-white rounded-3xl overflow-hidden shadow-lg shadow-slate-100 hover:shadow-2xl transition-all duration-300 group border border-slate-100"
             >
               <div className="bg-slate-100 w-full flex items-center justify-center text-slate-300 group-hover:bg-teal-50 transition-colors relative">
-  <img
-    src={member.image}
-    alt={member.name}
-    className="w-full h-auto max-h-[340px] object-contain rounded-t-3xl"
-  />
-  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-</div>
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-auto max-h-[320px] sm:max-h-[340px] object-contain rounded-t-3xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </div>
 
-              <div className="p-10 text-center relative">
+              <div className="p-8 sm:p-10 text-center relative">
                 <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-16 h-1 bg-teal-500 rounded-full"></div>
-                <h4 className="font-bold text-2xl text-slate-900 mb-2">{member.name}</h4>
-                <p className="text-teal-600 font-bold text-sm tracking-wider uppercase mb-6">{member.role}</p>
-                <p className="text-slate-500 leading-relaxed">{member.desc}</p>
+                <h4 className="font-bold text-xl sm:text-2xl text-slate-900 mb-2">{member.name}</h4>
+                <p className="text-teal-600 font-bold text-xs sm:text-sm tracking-wider uppercase mb-4 sm:mb-6">
+                  {member.role}
+                </p>
+                <p className="text-slate-500 leading-relaxed text-sm sm:text-base">{member.desc}</p>
               </div>
             </motion.div>
           ))}
@@ -909,11 +984,19 @@ const AboutPage = ({ navigate }) => (
       </Container>
     </Section>
 
-    <Section className="bg-gradient-to-br from-slate-800 via-blue-900 to-slate-800 text-white text-center py-32">
-      <Container>
-        <Heading className="!text-white !mb-8" level={2}>Work with a team that understands both technology and education.</Heading>
-        <motion.div variants={fadeInUp} className="flex justify-center mt-12">
-          <Button variant="accent" onClick={() => navigate('contact')} className="!px-10 !py-5 !text-lg">Contact us to discuss your project</Button>
+    <Section className="bg-gradient-to-br from-slate-800 via-blue-900 to-slate-800 text-white text-center py-20 md:py-32">
+      <Container className="px-4 sm:px-6">
+        <Heading className="!text-white !mb-6 sm:!mb-8" level={2}>
+          Work with a team that understands both technology and education.
+        </Heading>
+        <motion.div variants={fadeInUp} className="flex justify-center mt-8 sm:mt-12">
+          <Button
+            variant="accent"
+            onClick={() => navigate('contact')}
+            className="w-full sm:w-auto !px-8 sm:!px-10 !py-4 sm:!py-5 !text-base sm:!text-lg"
+          >
+            Contact us to discuss your project
+          </Button>
         </motion.div>
       </Container>
     </Section>
