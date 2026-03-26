@@ -277,7 +277,7 @@ const Navbar = ({ activePage, navigate }) => {
           >
             <img
               src="/images/logo/ivs-logo.png.png"
-              alt="Iqra Virtual Solutions logo"
+              alt="Iqra Virtual Solutions"
               className="w-10 h-10 object-contain p-1"
             />
           </div>
@@ -372,7 +372,7 @@ const Footer = ({ navigate }) => (
             <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg">
               <img
                 src="/images/logo/ivs-logo.png.png"
-                alt="Iqra Virtual Solutions logo"
+                alt="Iqra Virtual Solutions"
                 className="w-10 h-10 object-contain p-1"
               />
             </div>
